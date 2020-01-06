@@ -17,7 +17,7 @@ document.getElementById("wrong").innerHTML = "Letters Guessed so far: " + wrongG
 
 // Game Functions //    
 
-var gameWord = secretLetter[Math.floor(Math.random() * secretLetter.length)]
+var gameWord = secretLetter[Math.floor(Math.random() * secretLetter.length)] 
 console.log(gameWord)
 
 document.onkeydown = function(e) {
@@ -25,13 +25,13 @@ document.onkeydown = function(e) {
     console.log(guess)
     
     if (guess === gameWord) {
-        wins++
+        wins+=
         reset()
     } else if (guess !== gameWord) {
-        attempts--
+        attempts-=
         wrongGuess.push(guess)
     } else if (attempts === 0) {
-        losses++
+        losses+=
         reset()
     }
 }    
@@ -41,5 +41,8 @@ function reset() {
     document.getElementById("losses").innerHTML = "Losses: " + losses
     document.getElementById("attempts").innerHTML = "Guesses Remaining: " + attempts
     document.getElementById("wrong").innerHTML = "Letters Guessed so far: " + wrongGuess
+
+    var gameWord = secretLetter[Math.floor(Math.random() * secretLetter.length)] 
+    console.log(gameWord)
 }
 
